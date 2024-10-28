@@ -1,4 +1,3 @@
-# Imports
 from tkinter import Tk, BOTH, Canvas
 
 
@@ -11,29 +10,20 @@ class Window:
         self.__canvas.pack(fill=BOTH, expand=1)
         self.__running = False
 
-    # redraw() method
     def redraw(self):
-        # Call The root Widgets update_idletasks() and update() methods
         self.__root.update_idletasks()
         self.__root.update()
 
-    # wait_for_close() method
     def wait_for_close(self):
-        # Set the running data membe to True
         self.__running = True
-        # While the running data member is True, call the redraw() method
         while self.__running:
             self.redraw()
-        print("Window closed, game over.")
+        print("window closed...")
 
-    # draw_line() method
     def draw_line(self, line, fill_color="black"):
-        # Call the draw() method on the line object
         line.draw(self.__canvas, fill_color)
 
-    # close() method
     def close(self):
-        # Set the running data member to False
         self.__running = False
 
 
@@ -44,7 +34,11 @@ class Point:
 
 
 class Line:
-    def __init__(self, p1, p2):
+    def __init__(
+        self,
+        p1,
+        p2,
+    ):
         self.p1 = p1
         self.p2 = p2
 
